@@ -9,6 +9,7 @@
 import Moya
 
 enum SPAPI {
+    /// Get comments endpoint.
     case comments(idGte: Int?, idLte: Int?, page: Int?, limit: Int?, sortBy: String?, order: String?)
 }
 

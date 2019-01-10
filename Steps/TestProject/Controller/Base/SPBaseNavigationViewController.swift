@@ -10,18 +10,23 @@ import UIKit
 
 class SPBaseNavigationViewController: UINavigationController {
 
+    // MARK: Life Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.navigationBar.tintColor = SPColor.navigationBar.tint
-        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .medium),
-                                                            NSAttributedString.Key.foregroundColor: SPColor.navigationBar.title]
-        
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : SPColor.navigationBar.barButtonText], for: .normal)
-        UIBarButtonItem.appearance().tintColor = SPColor.navigationBar.barButtonTint
+        defaultConfigurations()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // MARK: Configurations
+    
+    /// Configuration of controller's UI elements.
+    fileprivate func defaultConfigurations() {
+        navigationBar.tintColor = SPColor.navigationBar.tint
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .medium),
+                                             NSAttributedString.Key.foregroundColor: SPColor.navigationBar.title]
     }
 }

@@ -46,7 +46,26 @@ class SPCommentsSettingsViewController: SPBaseViewController {
         
         // Bound TextFields
         lowerBoundTextField.text = "1"
-        upperBoundTextField.text = "2"
+        upperBoundTextField.text = "100"
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func onContinueButton(_ sender: Any) {
+        showCommentsScreen()
+    }
+    
+    // MARK: Navigation
+    
+    fileprivate func showCommentsScreen() {
+        let lowerId = Int(lowerBoundTextField.text ?? "")
+        let upperId = Int(upperBoundTextField.text ?? "")
+        
+        let viewController: SPCommentsViewController = SPCommentsViewController.create()
+        viewController.lowerId = lowerId
+        viewController.upperId = upperId
+        
+        self.navigationController?.show(viewController, sender: nil)
     }
 }
 
@@ -74,6 +93,7 @@ extension SPCommentsSettingsViewController: UITextFieldDelegate {
                 textField.text = "1"
                 break
             }
+            textField.text = "\(number)"
             
             guard let upperNumber = Int(upperBoundTextField.text ?? "") else {
                 break
@@ -89,6 +109,8 @@ extension SPCommentsSettingsViewController: UITextFieldDelegate {
                 lowerBoundTextField.text = "1"
                 break
             }
+            textField.text = "\(number)"
+            
             guard let lowerNumber = Int(lowerBoundTextField.text ?? "") else {
                 break
             }

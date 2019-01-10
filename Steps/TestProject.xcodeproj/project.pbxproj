@@ -20,6 +20,14 @@
 		E624426721E770510094B04F /* SPComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624426621E770510094B04F /* SPComment.swift */; };
 		E624426B21E771AA0094B04F /* SPNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624426A21E771AA0094B04F /* SPNetworkService.swift */; };
 		E624426D21E776090094B04F /* SPNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624426C21E776090094B04F /* SPNetworkManager.swift */; };
+		E624427021E77E360094B04F /* SPLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624426F21E77E360094B04F /* SPLayoutManager.swift */; };
+		E624427521E7848F0094B04F /* SPCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624427321E7848F0094B04F /* SPCommentTableViewCell.swift */; };
+		E624427621E7848F0094B04F /* SPCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624427421E7848F0094B04F /* SPCommentTableViewCell.xib */; };
+		E624427A21E784BD0094B04F /* SPBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624427921E784BD0094B04F /* SPBaseTableViewCell.swift */; };
+		E624427C21E790AA0094B04F /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624427B21E790AA0094B04F /* UITableView+extension.swift */; };
+		E624428021E7A66E0094B04F /* SPActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624427E21E7A66D0094B04F /* SPActivityView.swift */; };
+		E624428121E7A66E0094B04F /* SPActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E624427F21E7A66D0094B04F /* SPActivityView.xib */; };
+		E624428321E7A6CC0094B04F /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624428221E7A6CC0094B04F /* UIView+extension.swift */; };
 		FFCC984EEC16ED5E4F249932 /* Pods_TestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C614618B34EEAE2B4356AAC /* Pods_TestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +50,14 @@
 		E624426621E770510094B04F /* SPComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPComment.swift; sourceTree = "<group>"; };
 		E624426A21E771AA0094B04F /* SPNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPNetworkService.swift; sourceTree = "<group>"; };
 		E624426C21E776090094B04F /* SPNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPNetworkManager.swift; sourceTree = "<group>"; };
+		E624426F21E77E360094B04F /* SPLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPLayoutManager.swift; sourceTree = "<group>"; };
+		E624427321E7848F0094B04F /* SPCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCommentTableViewCell.swift; sourceTree = "<group>"; };
+		E624427421E7848F0094B04F /* SPCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPCommentTableViewCell.xib; sourceTree = "<group>"; };
+		E624427921E784BD0094B04F /* SPBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBaseTableViewCell.swift; sourceTree = "<group>"; };
+		E624427B21E790AA0094B04F /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
+		E624427E21E7A66D0094B04F /* SPActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPActivityView.swift; sourceTree = "<group>"; };
+		E624427F21E7A66D0094B04F /* SPActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPActivityView.xib; sourceTree = "<group>"; };
+		E624428221E7A6CC0094B04F /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,7 @@
 				E624424821E744460094B04F /* LaunchScreen.storyboard */,
 				E624424B21E744460094B04F /* Info.plist */,
 				E624426821E771870094B04F /* Manager */,
+				E624427721E784990094B04F /* View */,
 				E624426521E7702F0094B04F /* Model */,
 				E624425121E747B40094B04F /* Controller */,
 				E624425D21E74A7F0094B04F /* Supporting Files */,
@@ -128,6 +145,7 @@
 		E624425321E7482C0094B04F /* Comments */ = {
 			isa = PBXGroup;
 			children = (
+				E624427121E77FB20094B04F /* View */,
 				E624425621E749CE0094B04F /* SPCommentsViewController.swift */,
 			);
 			path = Comments;
@@ -155,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				E624425F21E74BDB0094B04F /* UIColor+extension.swift */,
+				E624427B21E790AA0094B04F /* UITableView+extension.swift */,
+				E624428221E7A6CC0094B04F /* UIView+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -178,6 +198,7 @@
 		E624426821E771870094B04F /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				E624426E21E77E180094B04F /* Layout */,
 				E624426921E771980094B04F /* Network */,
 			);
 			path = Manager;
@@ -190,6 +211,57 @@
 				E624426C21E776090094B04F /* SPNetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		E624426E21E77E180094B04F /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				E624426F21E77E360094B04F /* SPLayoutManager.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		E624427121E77FB20094B04F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E624427D21E7A65F0094B04F /* Activity View */,
+				E624427221E77FBA0094B04F /* Comment cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E624427221E77FBA0094B04F /* Comment cell */ = {
+			isa = PBXGroup;
+			children = (
+				E624427321E7848F0094B04F /* SPCommentTableViewCell.swift */,
+				E624427421E7848F0094B04F /* SPCommentTableViewCell.xib */,
+			);
+			path = "Comment cell";
+			sourceTree = "<group>";
+		};
+		E624427721E784990094B04F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E624427821E784A50094B04F /* Base */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E624427821E784A50094B04F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E624427921E784BD0094B04F /* SPBaseTableViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E624427D21E7A65F0094B04F /* Activity View */ = {
+			isa = PBXGroup;
+			children = (
+				E624427E21E7A66D0094B04F /* SPActivityView.swift */,
+				E624427F21E7A66D0094B04F /* SPActivityView.xib */,
+			);
+			path = "Activity View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +324,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E624427621E7848F0094B04F /* SPCommentTableViewCell.xib in Resources */,
 				E624424A21E744460094B04F /* LaunchScreen.storyboard in Resources */,
+				E624428121E7A66E0094B04F /* SPActivityView.xib in Resources */,
 				E624424721E744460094B04F /* Assets.xcassets in Resources */,
 				E624424521E744420094B04F /* Main.storyboard in Resources */,
 			);
@@ -318,15 +392,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E624428021E7A66E0094B04F /* SPActivityView.swift in Sources */,
+				E624427521E7848F0094B04F /* SPCommentTableViewCell.swift in Sources */,
+				E624428321E7A6CC0094B04F /* UIView+extension.swift in Sources */,
 				E624426721E770510094B04F /* SPComment.swift in Sources */,
 				E624426321E74F5E0094B04F /* SPColor.swift in Sources */,
 				E624426B21E771AA0094B04F /* SPNetworkService.swift in Sources */,
 				E624426D21E776090094B04F /* SPNetworkManager.swift in Sources */,
+				E624427C21E790AA0094B04F /* UITableView+extension.swift in Sources */,
+				E624427021E77E360094B04F /* SPLayoutManager.swift in Sources */,
 				E624425521E749930094B04F /* SPCommentsSettingsViewController.swift in Sources */,
 				E624425C21E74A6C0094B04F /* SPBaseNavigationViewController.swift in Sources */,
 				E624424021E744420094B04F /* AppDelegate.swift in Sources */,
 				E624426021E74BDB0094B04F /* UIColor+extension.swift in Sources */,
 				E624425A21E749FE0094B04F /* SPBaseViewController.swift in Sources */,
+				E624427A21E784BD0094B04F /* SPBaseTableViewCell.swift in Sources */,
 				E624425721E749CE0094B04F /* SPCommentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Configure Application Appearance
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : SPColor.navigationBar.barButtonText], for: .normal)
+        UIBarButtonItem.appearance().tintColor = SPColor.navigationBar.barButtonTint
+        
+        // IQKeyboardManager configuration.
         IQKeyboardManager.shared.enable = true
         return true
     }
