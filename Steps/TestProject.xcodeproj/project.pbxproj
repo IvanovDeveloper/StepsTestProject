@@ -15,6 +15,8 @@
 		E624425721E749CE0094B04F /* SPCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624425621E749CE0094B04F /* SPCommentsViewController.swift */; };
 		E624425A21E749FE0094B04F /* SPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624425921E749FE0094B04F /* SPBaseViewController.swift */; };
 		E624425C21E74A6C0094B04F /* SPBaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624425B21E74A6C0094B04F /* SPBaseNavigationViewController.swift */; };
+		E624426021E74BDB0094B04F /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624425F21E74BDB0094B04F /* UIColor+extension.swift */; };
+		E624426321E74F5E0094B04F /* SPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624426221E74F5E0094B04F /* SPColor.swift */; };
 		FFCC984EEC16ED5E4F249932 /* Pods_TestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C614618B34EEAE2B4356AAC /* Pods_TestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		E624425621E749CE0094B04F /* SPCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCommentsViewController.swift; sourceTree = "<group>"; };
 		E624425921E749FE0094B04F /* SPBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBaseViewController.swift; sourceTree = "<group>"; };
 		E624425B21E74A6C0094B04F /* SPBaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBaseNavigationViewController.swift; sourceTree = "<group>"; };
+		E624425F21E74BDB0094B04F /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		E624426221E74F5E0094B04F /* SPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				E624423F21E744420094B04F /* AppDelegate.swift */,
-				E624424321E744420094B04F /* Main.storyboard */,
 				E624424621E744460094B04F /* Assets.xcassets */,
 				E624424821E744460094B04F /* LaunchScreen.storyboard */,
 				E624424B21E744460094B04F /* Info.plist */,
@@ -98,6 +101,7 @@
 		E624425121E747B40094B04F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E624424321E744420094B04F /* Main.storyboard */,
 				E624425821E749EC0094B04F /* Base */,
 				E624425221E747BD0094B04F /* Comments Settings */,
 				E624425321E7482C0094B04F /* Comments */,
@@ -133,8 +137,26 @@
 		E624425D21E74A7F0094B04F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E624426121E74F2F0094B04F /* Constants */,
+				E624425E21E74BBD0094B04F /* Extensions */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E624425E21E74BBD0094B04F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E624425F21E74BDB0094B04F /* UIColor+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E624426121E74F2F0094B04F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E624426221E74F5E0094B04F /* SPColor.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +170,7 @@
 				E624423821E744420094B04F /* Sources */,
 				E624423921E744420094B04F /* Frameworks */,
 				E624423A21E744420094B04F /* Resources */,
+				1667C60E1E9CAA31864AB1FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,6 +228,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1667C60E1E9CAA31864AB1FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TestProject/Pods-TestProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestProject/Pods-TestProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EE7C1108F0FB8F8725757430 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,9 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E624426321E74F5E0094B04F /* SPColor.swift in Sources */,
 				E624425521E749930094B04F /* SPCommentsSettingsViewController.swift in Sources */,
 				E624425C21E74A6C0094B04F /* SPBaseNavigationViewController.swift in Sources */,
 				E624424021E744420094B04F /* AppDelegate.swift in Sources */,
+				E624426021E74BDB0094B04F /* UIColor+extension.swift in Sources */,
 				E624425A21E749FE0094B04F /* SPBaseViewController.swift in Sources */,
 				E624425721E749CE0094B04F /* SPCommentsViewController.swift in Sources */,
 			);

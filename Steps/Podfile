@@ -6,5 +6,8 @@ target 'TestProject' do
   use_frameworks!
 
   # Pods for TestProject
+  # source https://github.com/hackiftekhar/IQKeyboardManager
+  # Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView.
+  pod 'IQKeyboardManagerSwift'
 
 end

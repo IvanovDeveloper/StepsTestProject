@@ -14,6 +14,16 @@ class SPCommentsViewController: SPBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        defaultConfigurations()
+    }
+    
+    // MARK: Configurations
+    
+    /// Configuration of controller's UI elements.
+    fileprivate func defaultConfigurations() {
+        
+        navigationItem.title = "Comments"
+        
     }
 
 }
