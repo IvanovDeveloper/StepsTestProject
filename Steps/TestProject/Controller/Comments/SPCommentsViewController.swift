@@ -98,6 +98,12 @@ class SPCommentsViewController: SPBaseViewController {
     // MARK: Network
     
     fileprivate func loadComments(isLoadMore: Bool = false) {
+        if isLoadMore {
+            if isLoadedAll {
+                return
+            }
+        }
+        
         hideActivityIndicator()
         showLoadingActivity(false)
         
@@ -136,7 +142,7 @@ class SPCommentsViewController: SPBaseViewController {
         requestTask?.cancel()
         requestTask = nil
         
-        if isLoadMore == false {
+        if isLoadMore {
             if isLoadedAll {
                 return
             }
@@ -205,6 +211,7 @@ extension SPCommentsViewController: UITableViewDelegate, UITableViewDataSource {
         let lastElement = comments.count - 1
         if indexPath.row == lastElement {
             loadComments(isLoadMore: true)
+            print("load more \(Date())")
         }
     }
 }
