@@ -71,7 +71,7 @@ class SPCommentsSettingsViewController: SPBaseViewController {
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud.label.text = "Comments loading"
         hud.detailsLabel.text = "Cancel"
-        let tap = UITapGestureRecognizer(target: self, action: #selector(cancelButton))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cancelHud))
         hud.addGestureRecognizer(tap)
         self.hud = hud
         
@@ -94,8 +94,9 @@ class SPCommentsSettingsViewController: SPBaseViewController {
         }  
     }
     
+    // MARK: Actions
     
-    @objc func cancelButton() {
+    @objc func cancelHud() {
         self.commentsViewController?.requestTask?.cancel()
         self.commentsViewController = nil
         self.hud?.hide(animated: true)

@@ -97,6 +97,12 @@ class SPCommentsViewController: SPBaseViewController {
     
     // MARK: Network
     
+    /**
+     Load comments data and show UI updates.
+     
+     - Parameter isLoadMore: if false load comments from start, if true continue load comments.
+     
+     */
     fileprivate func loadComments(isLoadMore: Bool = false) {
         if isLoadMore {
             if isLoadedAll {
@@ -131,7 +137,7 @@ class SPCommentsViewController: SPBaseViewController {
     }
     
     /**
-     Load comments.
+     Load comments data.
  
      - Parameter isLoadMore: if false load comments from start, if true continue load comments.
      - Parameter successHandler: Handler which will be called after comments was loaded.
