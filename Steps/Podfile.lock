@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.8.0)
   - IQKeyboardManagerSwift (6.2.0)
+  - MBProgressHUD (1.1.0)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
   - Moya/Core (12.0.1):
@@ -10,21 +11,24 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - MBProgressHUD
   - Moya (~> 12.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - IQKeyboardManagerSwift
+    - MBProgressHUD
     - Moya
     - Result
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
 
-PODFILE CHECKSUM: 353d78376608991a0d604bea356b35999f979751
+PODFILE CHECKSUM: 4b642e9a69a5d2bd3f06583f3ef8261d5807d587
 
 COCOAPODS: 1.5.3

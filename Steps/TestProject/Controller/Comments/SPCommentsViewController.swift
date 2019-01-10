@@ -97,6 +97,33 @@ class SPCommentsViewController: SPBaseViewController {
     
     // MARK: Network
     
+    fileprivate func loadComments(isLoadMore: Bool = false) {
+        hideActivityIndicator()
+        showLoadingActivity(false)
+        
+        if isLoadMore {
+            showLoadingActivity(true)
+        } else {
+            showActivityIndicator()
+        }
+        
+        loadComments(isLoadMore: isLoadMore, successHandler: {
+            if isLoadMore {
+                self.showLoadingActivity(false)
+            } else {
+                self.hideActivityIndicator()
+            }
+            self.tableView.reloadData()
+        }) { (error) in
+            if isLoadMore {
+                self.showLoadingActivity(false)
+            } else {
+                self.hideActivityIndicator()
+            }
+            self.showError(error)
+        }
+    }
+    
     /**
      Load comments.
  
@@ -105,11 +132,9 @@ class SPCommentsViewController: SPBaseViewController {
      - Parameter errorHandler: Handler which will be called if occurred error.
      
      */
-    public func loadComments(isLoadMore: Bool = false, successHandler: (() -> Swift.Void)? = nil, errorHandler: ((Error) -> Swift.Void)? = nil) {
+    public func loadComments(isLoadMore: Bool = false, successHandler: (() -> Swift.Void)?, errorHandler: ((Error) -> Swift.Void)?) {
         requestTask?.cancel()
         requestTask = nil
-        hideActivityIndicator()
-        showLoadingActivity(false)
         
         if isLoadMore == false {
             if isLoadedAll {
@@ -120,23 +145,9 @@ class SPCommentsViewController: SPBaseViewController {
             isLoadedAll = false
         }
         
-        if successHandler == nil && errorHandler == nil {
-            if isLoadMore {
-                showLoadingActivity(true)
-            } else {
-                showActivityIndicator()
-            }
-        }
-        
         let task = SPNetworkManager.comments(idGte: self.lowerId, idLte: self.upperId, page: self.page, limit: self.limit, successHandler: { [weak self] (comments) in
             guard let `self` = self else { return }
             DispatchQueue.main.async {
-                if isLoadMore {
-                    self.showLoadingActivity(false)
-                } else {
-                    self.hideActivityIndicator()
-                }
-                
                 self.requestTask = nil
                 
                 self.page += 1
@@ -150,20 +161,12 @@ class SPCommentsViewController: SPBaseViewController {
                     self.comments = comments
                 }
                 
-                self.tableView.reloadData()
-                
                 successHandler?()
             }
         }) { [weak self] (error) in
             guard let `self` = self else { return }
             DispatchQueue.main.async {
-                if isLoadMore {
-                    self.showLoadingActivity(false)
-                } else {
-                    self.hideActivityIndicator()
-                }
                 self.requestTask = nil
-                self.showError(error)
                 errorHandler?(error)
             }
         }

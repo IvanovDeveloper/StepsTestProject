@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MBProgressHUD
+import Moya
 
 class SPCommentsSettingsViewController: SPBaseViewController {
 
@@ -57,15 +59,47 @@ class SPCommentsSettingsViewController: SPBaseViewController {
     
     // MARK: Navigation
     
+    var commentsViewController: SPCommentsViewController?
+    var hud: MBProgressHUD?
+    
     fileprivate func showCommentsScreen() {
         let lowerId = Int(lowerBoundTextField.text ?? "")
         let upperId = Int(upperBoundTextField.text ?? "")
+        let viewController: SPCommentsViewController = SPCommentsViewController.createWith(lowerId: lowerId, upperId: upperId)
+        commentsViewController = viewController
         
-        let viewController: SPCommentsViewController = SPCommentsViewController.create()
-        viewController.lowerId = lowerId
-        viewController.upperId = upperId
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = "Comments loading"
+        hud.detailsLabel.text = "Cancel"
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cancelButton))
+        hud.addGestureRecognizer(tap)
+        self.hud = hud
         
-        self.navigationController?.show(viewController, sender: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            guard let `self` = self else {return}
+            self.commentsViewController?.loadComments(successHandler: { [weak self] in
+                guard let `self` = self else {return}
+                self.commentsViewController = nil
+                self.hud?.hide(animated: true)
+                self.hud = nil
+                self.navigationController?.show(viewController, sender: nil)
+                
+            }) { [weak self] (error) in
+                guard let `self` = self else {return}
+                self.commentsViewController = nil
+                self.hud?.hide(animated: true)
+                self.hud = nil
+                self.showError(error)
+            }
+        }  
+    }
+    
+    
+    @objc func cancelButton() {
+        self.commentsViewController?.requestTask?.cancel()
+        self.commentsViewController = nil
+        self.hud?.hide(animated: true)
+        self.hud = nil
     }
 }
 
