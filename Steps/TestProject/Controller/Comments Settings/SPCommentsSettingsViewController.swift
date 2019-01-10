@@ -44,6 +44,7 @@ class SPCommentsSettingsViewController: SPBaseViewController {
         continueButton.layer.masksToBounds = true
         continueButton.layer.cornerRadius = buttonSectionViewHeight.constant/2
         
+        // Bound TextFields
         lowerBoundTextField.text = "1"
         upperBoundTextField.text = "2"
     }
@@ -60,6 +61,7 @@ extension SPCommentsSettingsViewController: UITextFieldDelegate {
         if updatedText.isEmpty {
             return true
         } else {
+            // Should be only whole numbers
             guard Int(updatedText) != nil else { return false }
             return true
         }

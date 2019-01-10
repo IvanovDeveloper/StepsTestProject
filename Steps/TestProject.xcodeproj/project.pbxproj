@@ -17,6 +17,9 @@
 		E624425C21E74A6C0094B04F /* SPBaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624425B21E74A6C0094B04F /* SPBaseNavigationViewController.swift */; };
 		E624426021E74BDB0094B04F /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624425F21E74BDB0094B04F /* UIColor+extension.swift */; };
 		E624426321E74F5E0094B04F /* SPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624426221E74F5E0094B04F /* SPColor.swift */; };
+		E624426721E770510094B04F /* SPComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624426621E770510094B04F /* SPComment.swift */; };
+		E624426B21E771AA0094B04F /* SPNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624426A21E771AA0094B04F /* SPNetworkService.swift */; };
+		E624426D21E776090094B04F /* SPNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624426C21E776090094B04F /* SPNetworkManager.swift */; };
 		FFCC984EEC16ED5E4F249932 /* Pods_TestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C614618B34EEAE2B4356AAC /* Pods_TestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,9 @@
 		E624425B21E74A6C0094B04F /* SPBaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBaseNavigationViewController.swift; sourceTree = "<group>"; };
 		E624425F21E74BDB0094B04F /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		E624426221E74F5E0094B04F /* SPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPColor.swift; sourceTree = "<group>"; };
+		E624426621E770510094B04F /* SPComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPComment.swift; sourceTree = "<group>"; };
+		E624426A21E771AA0094B04F /* SPNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPNetworkService.swift; sourceTree = "<group>"; };
+		E624426C21E776090094B04F /* SPNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,8 @@
 				E624424621E744460094B04F /* Assets.xcassets */,
 				E624424821E744460094B04F /* LaunchScreen.storyboard */,
 				E624424B21E744460094B04F /* Info.plist */,
+				E624426821E771870094B04F /* Manager */,
+				E624426521E7702F0094B04F /* Model */,
 				E624425121E747B40094B04F /* Controller */,
 				E624425D21E74A7F0094B04F /* Supporting Files */,
 			);
@@ -157,6 +165,31 @@
 				E624426221E74F5E0094B04F /* SPColor.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		E624426521E7702F0094B04F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E624426621E770510094B04F /* SPComment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E624426821E771870094B04F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E624426921E771980094B04F /* Network */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		E624426921E771980094B04F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E624426A21E771AA0094B04F /* SPNetworkService.swift */,
+				E624426C21E776090094B04F /* SPNetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,13 +270,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TestProject/Pods-TestProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -279,7 +318,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E624426721E770510094B04F /* SPComment.swift in Sources */,
 				E624426321E74F5E0094B04F /* SPColor.swift in Sources */,
+				E624426B21E771AA0094B04F /* SPNetworkService.swift in Sources */,
+				E624426D21E776090094B04F /* SPNetworkManager.swift in Sources */,
 				E624425521E749930094B04F /* SPCommentsSettingsViewController.swift in Sources */,
 				E624425C21E74A6C0094B04F /* SPBaseNavigationViewController.swift in Sources */,
 				E624424021E744420094B04F /* AppDelegate.swift in Sources */,
